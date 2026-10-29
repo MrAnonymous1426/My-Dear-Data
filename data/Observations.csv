@@ -14,3 +14,5 @@ date,start,minutes,module,type,place,energy,focus,sleep,caffeine,moved,distracti
 27/10,	18:20,	50,	math,	hw,	home,	e2,	f2,	s6,	c-,	m+,	d1,	People,	rew+
 28/10,	10:00,	10:40,	sa,	exercises,	home,	e2,	f3,	s7,	c+,	m+,	d1,	People,	rew+
 28/10,	14:20,	15:00,	math,	hw,	home,	e3,	f3,	s7,	c-,	m-,	d0,	N/A,	rew-
+29/10,	9:00,	9:40,	db,	exercises,	home,	e3,	f2,	s7,	c+,	m+,	d0,	N/A,	rew-
+29/10,	13:12,	0:00,	pj,	exercises,	home,	e3,	f4,	s7,	c-,	m+,	d0,	N/A, rew-
