@@ -57,7 +57,9 @@ void drawSession(TableRow r) {
   // Day label and sleep moon.
   // Redrawn for every session that day, which is harmless as long as
   // every row for that day has the same sleep value.
-  fill(80); noStroke(); textSize(12);
+  fill(80); 
+  noStroke(); 
+  textSize(12);
   text(clean(r, "date"), 20, y + 4);
   fill(#C9C3E6);
   circle(120, y, level(r, "sleep") * 4);
