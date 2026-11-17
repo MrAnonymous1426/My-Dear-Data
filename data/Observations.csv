@@ -35,3 +35,7 @@ date,start,minutes,module,type,place,energy,focus,sleep,caffeine,moved,distracti
 16/11,	17:00,	30,	db,	study,	home,	e3,	f2,	s7,	c-,	m+,	d1,	People,	rew-
 16/11,	17:45, 30,	db,	study,	home,	e3,	f3,	s7,	c-,	m-,	d2,	People,	rew-
 16/11,	18:50,	25,	db,	study,	home,	e3,	f2,	s7,	c-,	m-,	d0,	N/A,	rew+
+17/11,	13:40,	35,	sa,	study,	home,	e3,	f2,	s8,	c-,	m-,	d1,	People,	rew+
+17/11,	14:50,	40,	sa,	study,	home,	e3,	f3,	s8,	c-,	m-,	d0,	N/A,	rew-
+17/11,	17:40,	30,	sa,	study,	home,	e3,	f2,	s8,	c-,	m-,	d2,	phone,	rew+
+17/11,	19:00,	40,	math,	study,	home,	e2,	f2,	s8,	c-,	m-,	d0,	N/A,	rew-
