@@ -54,3 +54,8 @@ date,start,minutes,module,type,place,energy,focus,sleep,caffeine,moved,distracti
 20/11,	13:02,	38,	math,	study,	library,	e3,	f3,	s8,	c-,	m-,	d0,	N/A,	rew-
 20/11,	15:06,	43,	math,	study,	home,	e3,	f3,	s8,	c-,	m-,	d1,	people,	rew-
 20/11,	17:02,	45,	db,	study,	home,	e2,	f2,	s8,	c-,	m+,	d1,	people,	rew+
+21/11,	08:34,	37,	math,	study,	home,	e4,	f4,	s8,	c+,	m-,	d0,	N/A,	rew-
+21/11,	09:46,	38,	math,	study,	home,	e4,	f4,	s8,	c+,	m-,	d1,	people,	rew+
+21/11,	11:01,	40,	sa,	study,	home,	e3,	f4,	s8,	c+,	m-,	d1,	people,	rew+
+21/11,	17:48,	30,	sa,	study,	home,	e3,	f3,	s8,	c-,	m-,	d0,	N/A,	rew+
+21/11,	19:03,	29,	java,	study,	home,	e2,	f2,	s8,	c-,	m-,	d1,	people,	rew+
