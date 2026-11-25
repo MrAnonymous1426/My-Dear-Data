@@ -16,10 +16,14 @@ class Observation{
     String reward;
     int daysSinceStart;
     int totalMinutes;
+    int focusvalue;
+    //Visualization
+    float x, y;   // position on the canvas
+    float w;      // size (diameter)
+    color c;      // colour
 
     Observation(String[] data) {
         this.date = LocalDate.parse(formatDate(data[0]));
-        println("Parsed date: " + this.date); // Debugging line to check the parsed date
         // Para calcular o numero de dias desde a primeira data, faço data atual menos a primeira data e adiciono 1.
         this.startHour = data[1];
         this.minutes = Integer.parseInt(trim(data[2]));
@@ -27,7 +31,11 @@ class Observation{
         this.type = data[4];
         this.place = data[5];
         this.energy = data[6];
-        this.focus = data[7];
+        this.focus = trim(data[7]);
+        if (this.focus.charAt(0) != 'f'){
+            println("Focus value: " + this.focus); // Debugging line to check the focus value
+        }
+        this.focusvalue = parseInt(this.focus.substring(1));
         this.sleep = data[8];
         this.caffeine = data[9];
         this.moved = data[10];
@@ -48,6 +56,20 @@ class Observation{
     void calculateTotalMinutes() {
         int[] timeParts = int(trim(split(this.startHour, ":")));
         this.totalMinutes = timeParts[0] * 60 + timeParts[1];
-        println("Total minutes for " + this.startHour + ": " + this.totalMinutes);
+    }
+
+    void setVisuals(int lastDay, int maxMinutes) {
+        x = map(daysSinceStart, 1, lastDay, 50, width - 50);   // left → right = day 1 → last day
+        y = map(totalMinutes, 0, 1440, 50, height - 50);       // top → bottom = 00:00 → 23:59
+        w = map(minutes, 0, maxMinutes, 6, 40);                // longer session = bigger circle
+        // red (low focus) → green (high focus)
+        // Map focus value (1-5) to a color gradient
+        c = lerpColor(color(220, 60, 60), color(60, 160, 90), map(this.focusvalue, 1, 5, 0, 1));         
+    }
+
+    void display() {
+        noStroke();
+        fill(c);
+        ellipse(x, y, w, w);
     }
 }

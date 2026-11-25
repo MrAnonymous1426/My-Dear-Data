@@ -9,6 +9,9 @@ Observation observationRow;
 Observation[] observations;
 
 void setup() {
+
+  size(1000, 500);
+
   linesData = loadStrings("data/observations.csv");
   // Remove the header row from the data.
   linesData = subset(linesData, 1);
@@ -28,5 +31,16 @@ void setup() {
     observations[i].calculateTotalMinutes();
   }
 
+  int lastDay = 0;
+  int longestSession = 0;
 
+  for (int i = 0; i < observations.length; i++) {
+    lastDay = max(lastDay, observations[i].daysSinceStart);
+    longestSession = max(longestSession, observations[i].minutes);
+  }
+
+  for (int i = 0; i < observations.length; i++) {
+    observations[i].setVisuals(lastDay, longestSession);
+    observations[i].display();
+  }
 }
