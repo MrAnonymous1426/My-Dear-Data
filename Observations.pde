@@ -6,33 +6,34 @@ class Observation{
     String module;
     String type;
     String place;
-    int energy;
-    int focus;
-    int sleep;
-    int caffeine;
-    boolean moved;
-    int distractions;
+    String energy;
+    String focus;
+    String sleep;
+    String caffeine;
+    String moved;
+    String distractions;
     String main_distraction;
-    double reward;
+    String reward;
     int daysSinceStart;
     int totalMinutes;
 
     Observation(String[] data) {
         this.date = LocalDate.parse(formatDate(data[0]));
+        println("Parsed date: " + this.date); // Debugging line to check the parsed date
         // Para calcular o numero de dias desde a primeira data, faço data atual menos a primeira data e adiciono 1.
         this.startHour = data[1];
         this.minutes = Integer.parseInt(trim(data[2]));
         this.module = data[3];
         this.type = data[4];
-        this.place = "";
-        this.energy = 0;
-        this.focus = 0;
-        this.sleep = 0;
-        this.caffeine = 0;
-        this.moved = false;
-        this.distractions = 0;
-        this.main_distraction = "";
-        this.reward = 0.0;
+        this.place = data[5];
+        this.energy = data[6];
+        this.focus = data[7];
+        this.sleep = data[8];
+        this.caffeine = data[9];
+        this.moved = data[10];
+        this.distractions = data[11];
+        this.main_distraction = data[12];
+        this.reward = data[13];
     }
 
     String formatDate(String s) {
