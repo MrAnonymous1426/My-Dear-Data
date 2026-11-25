@@ -18,6 +18,7 @@ void setup() {
 
   observations = new Observation[linesData.length];
 
+  // Parse the CSV lines into Observation objects.
   for (int i = 0; i < linesData.length; i++) {
     parsedRow = split(linesData[i], ",");
     observations[i] = new Observation(parsedRow);
@@ -26,11 +27,13 @@ void setup() {
   // Get the first date in the data for calculating date differences.
   startDate = observations[0].date;
 
+  //Calculate days since start and total minutes for each observation.
   for (int i = 0; i < observations.length; i++) {
     observations[i].calculateDaysSinceStart(startDate);
     observations[i].calculateTotalMinutes();
   }
 
+  //Calculate last day and longest session for scaling.
   int lastDay = 0;
   int longestSession = 0;
 
@@ -39,6 +42,7 @@ void setup() {
     longestSession = max(longestSession, observations[i].minutes);
   }
 
+  // For each observation, display the visual.
   for (int i = 0; i < observations.length; i++) {
     observations[i].setVisuals(lastDay, longestSession);
     observations[i].display();
